@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="525.0" prefWidth="615.0" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ScoreViewController">
+   <children>
+      <GridPane layoutX="5.0" layoutY="14.0" prefHeight="497.0" prefWidth="605.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="152.66668701171875" minHeight="10.0" prefHeight="45.333333333333336" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="165.0" minHeight="7.666675567626953" prefHeight="73.66665903727213" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="165.0" minHeight="2.000002543131501" prefHeight="8.33334096272786" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="390.3333435058594" minHeight="10.0" prefHeight="269.6666666666667" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="264.0" minHeight="10.0" prefHeight="35.999979654947936" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="77.33331298828125" minHeight="10.0" prefHeight="39.666666666666686" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="77.33331298828125" minHeight="10.0" prefHeight="32.333333333333314" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="result" text="Label" />
+            <ButtonBar prefHeight="37.0" prefWidth="249.0" GridPane.rowIndex="5">
+              <buttons>
+                <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveScore" prefHeight="25.0" prefWidth="378.0" text="Zapisz wynik" />
+                  <Button fx:id="retakeButton" mnemonicParsing="false" onAction="#retake" prefHeight="25.0" text="Spróbuj jeszcze raz" />
+              </buttons>
+            </ButtonBar>
+            <Label fx:id="pytanie" text="Label" GridPane.rowIndex="4" />
+            <TableView fx:id="nickTableView" prefHeight="63.0" prefWidth="605.0" GridPane.rowIndex="1">
+              <columns>
+                <TableColumn prefWidth="599.9999694824219" text="Wpisz nick i wciśnij ENTER" />
+              </columns>
+            </TableView>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
+               <children>
+                  <TableView fx:id="tableView" prefHeight="367.0" prefWidth="600.0">
+                    <columns>
+                      <TableColumn prefWidth="138.00000500679016" text="nick" />
+                      <TableColumn prefWidth="132.66664123535156" text="wynik" />
+                        <TableColumn prefWidth="169.33331298828125" text="próba" />
+                        <TableColumn minWidth="0.0" prefWidth="158.66668701171875" text="nazwa quizu" />
+                    </columns>
+                  </TableView>
+               </children>
+            </VBox>
+            <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.rowIndex="6">
+              <buttons>
+                  <Button fx:id="exitButton" mnemonicParsing="false" onAction="#exitApp" prefHeight="25.0" prefWidth="336.0" text="Wyjdź" />
+                  <Button mnemonicParsing="false" onAction="#usun" text="Wyczyść bazę danych i wyjdź" />
+              </buttons>
+            </ButtonBar>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
